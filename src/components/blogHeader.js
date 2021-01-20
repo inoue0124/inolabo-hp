@@ -6,7 +6,7 @@ import { FiMenu } from "react-icons/fi"
 import { MdClose } from "react-icons/md"
 import { IoIosSearch } from "react-icons/io"
 
-const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
+const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
   const data = useStaticQuery(graphql`
     {
       allTopicsJson {
@@ -21,7 +21,7 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
   `)
 
   return (
-    <header id="header" className={`${isTransparent ? 'transparent' : ''}`}>
+    <header id="header">
       <div className="container">
         <button
           id="site-logo-wrapper"
@@ -32,7 +32,7 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
           }}
         >
           <Link
-            to="/"
+            to="/blog"
             id="site-logo"
             style={{
               textDecoration: `none`,
