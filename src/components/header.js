@@ -4,9 +4,9 @@ import React from "react"
 
 import { FiMenu } from "react-icons/fi"
 import { MdClose } from "react-icons/md"
-import CustomBtn from './button';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import { makeStyles } from '@material-ui/core/styles';
+import CustomBtn from './button'
+import MailOutlineIcon from '@material-ui/icons/MailOutline'
+import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   navTxtEn: {
@@ -56,19 +56,19 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
         <nav id="nav">
           <ul>
             <li>
-              <Link to="/about">
+              <Link to="/#solution">
                 <span className={classes.navTxtEn}>SOLUTION</span><br/>
                 <span className={classes.navTxt}>事業</span>
               </Link>
             </li>
             <li>
-              <Link to="/about">
+              <Link to="/#works">
                 <span className={classes.navTxtEn}>WORKS</span><br/>
                 <span className={classes.navTxt}>制作事例</span>
               </Link>
             </li>
             <li>
-              <Link to="/about">
+              <Link to="/#about">
                 <span className={classes.navTxtEn}>ABOUT</span><br/>
                 <span className={classes.navTxt}>INOLABOとは</span>
               </Link>
@@ -98,19 +98,19 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
         <div id="menu">
           <ul>
             <li>
-              <Link to="/about">
+              <Link to="/#solution">
                 <span className={classes.navTxtEn}>SOLUTION</span><br/>
                 <span className={classes.navTxt}>事業</span>
               </Link>
             </li>
             <li>
-              <Link to="/about">
+              <Link to="/#works">
                 <span className={classes.navTxtEn}>WORKS</span><br/>
                 <span className={classes.navTxt}>制作事例</span>
               </Link>
             </li>
             <li>
-              <Link to="/about">
+              <Link to="/#about">
                 <span className={classes.navTxtEn}>ABOUT</span><br/>
                 <span className={classes.navTxt}>INOLABOとは</span>
               </Link>
