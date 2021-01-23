@@ -25,7 +25,7 @@ const SectionConv = () => {
             CONTACT
           </Typography>
         </Grid>
-        <CustomBtn title="お問い合わせはこちら" iconComponent={<MailOutlineIcon />} />
+        <CustomBtn title="お問い合わせ" iconComponent={<MailOutlineIcon />} />
       </Grid>
     </Grid>
   );

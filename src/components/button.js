@@ -7,11 +7,9 @@ const BootstrapButton = withStyles({
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 16,
-    padding: '12px 24px',
-    border: '1px solid',
+    padding: '6px 12px',
     lineHeight: 1.5,
     backgroundColor: '#0063cc',
-    borderColor: '#0063cc',
     fontFamily: [
       '-apple-system',
       'BlinkMacSystemFont',
@@ -40,13 +38,14 @@ const BootstrapButton = withStyles({
   },
 })(Button);
 
-const CustomBtn = ({ title, iconComponent }) => {
+const CustomBtn = ({ title, iconComponent, bgColor }) => {
   return (
     <BootstrapButton 
       variant="contained"
       color="primary"
       disableRipple
       startIcon={iconComponent}
+      style={{ backgroundColor: bgColor }}
     >
       {title}
     </BootstrapButton>
