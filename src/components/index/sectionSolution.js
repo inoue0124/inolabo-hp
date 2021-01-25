@@ -1,8 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import SolutionCard from "../solutionCard"
+import SolutionCard from "./solutionCard"
 import Typography from '@material-ui/core/Typography';
-import expImg from '../../../static/images/buildings.jpg'
 
 const useStyles = makeStyles((theme) => ({
   root: {

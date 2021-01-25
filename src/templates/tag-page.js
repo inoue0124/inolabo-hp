@@ -1,11 +1,11 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/index/layout"
 
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { FaAngleDoubleRight } from "react-icons/fa"
 
-import Card from "../components/card"
-import CardSmall from "../components/cardSmall"
+import Card from "../components/blog/card"
+import CardSmall from "../components/blog/cardSmall"
 
 function TagPageTemplate({ pageContext }) {
   const data = useStaticQuery(graphql`

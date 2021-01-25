@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import WorksCard from "../worksCard"
+import WorksCard from "./worksCard"
 import Typography from '@material-ui/core/Typography';
 import expImg from '../../../static/images/worksExperiment.png'
 import chitaiImg from '../../../static/images/worksChintai.png'

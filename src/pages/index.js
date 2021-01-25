@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react"
 import { makeStyles } from '@material-ui/core/styles';
 import Image from "../components/image"
-import Header from "../components/header"
-import Footer from "../components/footer"
+import Header from "../components/index/header"
+import Footer from "../components/index/footer"
 import SectionSolution from "../components/index/sectionSolution"
 import SectionWorks from "../components/index/sectionWorks"
 import SectionAbout from "../components/index/sectionAbout"

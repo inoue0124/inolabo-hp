@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 
-import Card from "../components/card"
-import CardSmall from "../components/cardSmall"
-import Layout from "../components/layout"
+import Card from "../components/blog/card"
+import CardSmall from "../components/blog/cardSmall"
+import Layout from "../components/index/layout"
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa"
 
 function ArchivePageTemplate({ data, pageContext }) {

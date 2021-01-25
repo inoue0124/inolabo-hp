@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/index/layout"
 import Image from "gatsby-image"
 import SEO from "../components/seo"
-import Card from "../components/card"
+import Card from "../components/blog/card"
 
 class ArticleTemplate extends Component {
   render() {

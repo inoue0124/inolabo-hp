@@ -2,12 +2,12 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { FaAngleDoubleRight } from "react-icons/fa"
 
-import Layout from "../components/layout"
+import Layout from "../components/index/layout"
 import SEO from "../components/seo"
-import Card from "../components/card"
-import CardSmall from "../components/cardSmall"
-import Featured from "../components/featured"
-import Search from "../components/search"
+import Card from "../components/blog/card"
+import CardSmall from "../components/blog/cardSmall"
+import Featured from "../components/blog/featured"
+import Search from "../components/blog/search"
 
 const BlogPage = props => {
   const data = useStaticQuery(graphql`

@@ -2,9 +2,9 @@ import React from "react"
 
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
-import Card from "../components/card"
-import CardSmall from "../components/cardSmall"
-import Layout from "../components/layout"
+import Card from "../components/blog/card"
+import CardSmall from "../components/blog/cardSmall"
+import Layout from "../components/index/layout"
 
 const TopicPageTemplate = ({ pageContext }) => {
   const data = useStaticQuery(graphql`

@@ -1,10 +1,10 @@
-import { Link, useStaticQuery, graphql, navigate } from "gatsby"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
 import { FiMenu } from "react-icons/fi"
 import { MdClose } from "react-icons/md"
-import CustomBtn from './button'
+import CustomBtn from '../button'
 import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -21,18 +21,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
   const classes = useStyles();
-  const data = useStaticQuery(graphql`
-    {
-      allTopicsJson {
-        edges {
-          node {
-            name
-            slug
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <header id="header" className={`${isTransparent ? 'transparent' : ''}`}>
