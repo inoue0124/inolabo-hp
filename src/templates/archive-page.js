@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 
 import Card from "../components/blog/card"
 import CardSmall from "../components/blog/cardSmall"
-import Layout from "../components/index/layout"
+import Layout from "../components/blog/layout"
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa"
 
 function ArchivePageTemplate({ data, pageContext }) {

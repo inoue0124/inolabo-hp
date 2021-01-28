@@ -2,7 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { FaAngleDoubleRight } from "react-icons/fa"
 
-import Layout from "../components/index/layout"
+import Layout from "../components/blog/layout"
 import SEO from "../components/seo"
 import Card from "../components/blog/card"
 import CardSmall from "../components/blog/cardSmall"

@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/index/layout"
+import Layout from "../components/blog/layout"
 import Image from "gatsby-image"
 import SEO from "../components/seo"
 import Card from "../components/blog/card"

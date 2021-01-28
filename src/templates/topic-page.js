@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 import Card from "../components/blog/card"
 import CardSmall from "../components/blog/cardSmall"
-import Layout from "../components/index/layout"
+import Layout from "../components/blog/layout"
 
 const TopicPageTemplate = ({ pageContext }) => {
   const data = useStaticQuery(graphql`

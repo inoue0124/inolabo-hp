@@ -1,11 +1,11 @@
 [
   {
-    "name": "Topic 1",
+    "name": "Tech",
     "slug": "topic-1",
     "image": "../../static/images/topic1logo.jpg"
   },
   {
-    "name": "Topic 2",
+    "name": "Life",
     "slug": "topic-2",
     "image": "../../static/images/topic2logo.jpg"
   },

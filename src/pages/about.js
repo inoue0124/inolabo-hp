@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/index/layout"
+import Layout from "../components/blog/layout"
 import SEO from "../components/seo"
 
 const AboutPage = () => {
