@@ -547,6 +547,11 @@ footer {
   font-size: 16px;
   line-height: 22px;
   margin-top: 7px;
+  text-align: right;
+}
+.article-category {
+  font-size: 15px;
+  margin-top: 7px;
 }
 .article-tags {
   display: flex;
@@ -581,16 +586,21 @@ footer {
   align-items: center;
   margin: 120px 0 60px 0;
 }
-.topic-page-header h1 {
+/* .topic-page-header h1 {
   margin-right: 24px;
-}
+} */
 .topic-page-image {
-  width: 90px;
-  height: 90px;
+  width: 50px;
+  height: 50px;
+}
 
-  @media (max-width: 600px) {
-    width: 60px;
-    height: 60px;
+@media (max-width: 600px) {
+  .topic-page-header {
+    margin: 80px 0 20px 0;
+  }
+  .topic-page-image {
+    width: 40px;
+    height: 40px;
   }
 }
 

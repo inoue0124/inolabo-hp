@@ -44,13 +44,16 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
 
         <nav id="nav">
           <ul>
+            <li>
+              <Link to="/blog">トップ</Link>
+            </li>
             {data.allTopicsJson.edges.map(({ node }) => (
               <li key={node.slug}>
                 <Link to={`/${node.slug}`}>{node.name}</Link>
               </li>
             ))}
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about">INOLABOについて</Link>
             </li>
           </ul>
           <div id="search-box">

@@ -31,7 +31,10 @@ class ArticleTemplate extends Component {
         <div id="article">
           <header>
             <h1 className="article-title">{post.frontmatter.title}</h1>
-            <p className="article-date">{post.frontmatter.date}</p>
+            <p className="article-category">
+              カテゴリ:
+              <Link to={`/${post.frontmatter.category}`}>{post.frontmatter.category}</Link>
+            </p>
             <div className="article-tags">
               {post.frontmatter.tags.map(tag => (
                 <Link
@@ -48,6 +51,7 @@ class ArticleTemplate extends Component {
                 </Link>
               ))}
             </div>
+            <p className="article-date">{post.frontmatter.date}</p>
             <Image
               fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
               className="article-image"
@@ -61,7 +65,7 @@ class ArticleTemplate extends Component {
           <div>
             {similarPosts.length > 0 && (
               <h3 id="similar-posts-header">
-                Other {this.props.pageContext.topic} Tutorials
+                おすすめ記事一覧
               </h3>
             )}
 
@@ -101,8 +105,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        dateModified(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY年MM月DD日")
+        dateModified(formatString: "YYYY年MM月DD日")
         description
         tags
         category

@@ -22,7 +22,7 @@ const Topics = () => {
               slug
             }
             frontmatter {
-              date(formatString: "MMMM DD, YYYY")
+              date(formatString: "YYYY年MM月DD日")
               title
               description
               tags
@@ -43,7 +43,7 @@ const Topics = () => {
 
   return (
     <Layout>
-      <h2 className="page-header">Topics List</h2>
+      <h2 className="page-header">タグ一覧</h2>
       <div id="all-topics-list">
         {data.allMarkdownRemark.group.map(topic => (
           <Link

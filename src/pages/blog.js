@@ -5,9 +5,9 @@ import { FaAngleDoubleRight } from "react-icons/fa"
 import Layout from "../components/blog/layout"
 import SEO from "../components/seo"
 import Card from "../components/blog/card"
-import CardSmall from "../components/blog/cardSmall"
 import Featured from "../components/blog/featured"
 import Search from "../components/blog/search"
+import Sidebar from "../components/blog/sidebar"
 
 const BlogPage = props => {
   const data = useStaticQuery(graphql`
@@ -25,7 +25,7 @@ const BlogPage = props => {
               slug
             }
             frontmatter {
-              date(formatString: "MMMM DD, YYYY")
+              date(formatString: "YYYY年MM月DD日")
               title
               description
               category
@@ -62,7 +62,7 @@ const BlogPage = props => {
         <Featured markdown={data.allMarkdownRemark} />
         <div className="flex-layout">
           <div className="cards">
-            <h2 id="articles-title">Articles</h2>
+            <h2 id="articles-title">記事一覧</h2>
             {data.allMarkdownRemark.edges.map(({ node }, index) => {
               if (index < 3) {
                 return null
@@ -77,39 +77,10 @@ const BlogPage = props => {
               }
             })}
           </div>
-          <div className="sidebar">
-            <h2 className="sidebar-header">Mailing List</h2>
-            <div className="sidebar-emails">
-              <h2>Mailing list here</h2>
-              <p>Subscribe to my list for lots of great reasons</p>
-              <form>
-                <input type="text" id="email" aria-label="email" />
-                <input
-                  type="submit"
-                  value="Subscribe"
-                  aria-label="subscribe"
-                />{" "}
-              </form>
-              <span>Weekly updates, unsubscribe at any time</span>
-            </div>
-            <h2 className="sidebar-header">Popular Articles</h2>
-            <div>
-              {data.allMarkdownRemark.edges.map(({ node }, index) => {
-                if (index > 2 && index < 5) {
-                  return (
-                    <CardSmall
-                      key={node.id}
-                      slug={node.fields.slug}
-                      frontmatter={node.frontmatter}
-                    />
-                  )
-                } else return null
-              })}
-            </div>
-          </div>
+          <Sidebar posts={data.allMarkdownRemark.edges}/>
         </div>
         <Link to="/archive/2" id="archive-link">
-          More Articles
+          もっと見る
           <FaAngleDoubleRight className="icon-right" />
         </Link>{" "}
         <br />
