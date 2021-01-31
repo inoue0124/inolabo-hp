@@ -55,7 +55,7 @@ body {
 /* Header (Navbar) Section Styles */
 #header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 60px;
   top: 0;
   box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.03);
@@ -82,6 +82,7 @@ body {
 #nav ul {
   display: flex;
   list-style: none;
+  align-items: center;
 }
 #nav ul li {
   margin: 12px;
@@ -134,18 +135,18 @@ body {
   position: fixed;
   width: 100%;
   min-height: 100vh;
-  background: #999999;
+  background: #fff;
   color: #fff;
   z-index: 25;
   padding: 20px;
+  opacity: 0.9;
 }
 #menu ul {
-  list-style: none;
   margin-top: 10px;
 }
 #menu li {
   margin-bottom: 16px;
-  font-size: 18px;
+  border-bottom: dashed 1px grey;
 }
 
 .menu-button {
@@ -482,7 +483,6 @@ footer {
   border-bottom: 1px solid grey;
 }
 .footer-social {
-  width: 50%;
   font-size: 18px;
   font-weight: 700;
 }

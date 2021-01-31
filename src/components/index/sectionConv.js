@@ -44,7 +44,7 @@ const SectionConv = () => {
             INOLABOは、システムの機能数に応じたわかりやすい料金設定をご用意しております。
           </Typography>
         </Grid>
-        <CustomBtn title="お問い合わせ" iconComponent={<MailOutlineIcon />} />
+        <CustomBtn title="お問い合わせ" iconComponent={<MailOutlineIcon />} bgColor="#F2994A" to="/inquiry"/>
       </Grid>
     </Grid>
   );

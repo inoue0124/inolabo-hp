@@ -70,11 +70,6 @@ const TopicPageTemplate = ({ pageContext }) => {
     <Layout pageType="Topic">
       <div className="topic-page-header">
         <h1>{topicInfo.name}</h1>
-        <Image
-          className="topic-page-image"
-          fluid={topicInfo.image.childImageSharp.fluid}
-          alt={topicInfo.name}
-        />{" "}
       </div>
       <div className="flex-layout">
         <div className="cards">

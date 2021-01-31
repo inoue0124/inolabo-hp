@@ -90,7 +90,7 @@ const IndexPage = () => {
           明瞭な価格と確かな技術を約束します。
         </Typography>
         <h1 className={classes.heroTxtH2}>
-          <CustomBtn title="お問い合わせ" iconComponent={<MailOutlineIcon />} bgColor="#F2994A" />
+          <CustomBtn title="お問い合わせ" iconComponent={<MailOutlineIcon />} bgColor="#F2994A" to="/inquiry"/>
         </h1>
       </div>
 

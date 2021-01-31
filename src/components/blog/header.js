@@ -5,6 +5,8 @@ import React from "react"
 import { FiMenu } from "react-icons/fi"
 import { MdClose } from "react-icons/md"
 import { IoIosSearch } from "react-icons/io"
+import CustomBtn from '../button'
+import MailOutlineIcon from '@material-ui/icons/MailOutline'
 
 const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
   const data = useStaticQuery(graphql`
@@ -43,6 +45,17 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
         </button>
 
         <nav id="nav">
+          <div id="search-box">
+            <form
+              onSubmit={e => {
+                e.preventDefault()
+                navigate(`/blog?s=${e.target.query.value.toLowerCase()}`)
+              }}
+            >
+              <input type="text" id="query" aria-label="Search" />
+            </form>
+            <IoIosSearch />
+          </div>
           <ul>
             <li>
               <Link to="/blog">トップ</Link>
@@ -55,18 +68,11 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
             <li>
               <Link to="/about">INOLABOについて</Link>
             </li>
+            <li>
+              <CustomBtn title="お仕事の依頼" iconComponent={<MailOutlineIcon />} bgColor="primary" to="/"/>
+            </li>
           </ul>
-          <div id="search-box">
-            <form
-              onSubmit={e => {
-                e.preventDefault()
-                navigate(`/blog?s=${e.target.query.value.toLowerCase()}`)
-              }}
-            >
-              <input type="text" id="query" aria-label="Search" />
-            </form>
-            <IoIosSearch />
-          </div>
+          
           {menuOpen ? (
             <button className="menu-button" onClick={() => setMenuOpen(false)}>
               <MdClose />
@@ -87,7 +93,10 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
               </li>
             ))}
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about">INOLABOについて</Link>
+            </li>
+            <li style={{borderBottom: 'none'}}>
+              <CustomBtn title="お仕事の依頼" iconComponent={<MailOutlineIcon />} bgColor="primary" to="/"/>
             </li>
           </ul>
         </div>

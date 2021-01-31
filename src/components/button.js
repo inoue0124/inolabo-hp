@@ -1,6 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { Link } from "gatsby"
 
 const BootstrapButton = withStyles({
   root: {
@@ -38,7 +39,7 @@ const BootstrapButton = withStyles({
   },
 })(Button);
 
-const CustomBtn = ({ title, iconComponent, bgColor }) => {
+const CustomBtn = ({ title, iconComponent, bgColor, to }) => {
   return (
     <BootstrapButton 
       variant="contained"
@@ -47,7 +48,9 @@ const CustomBtn = ({ title, iconComponent, bgColor }) => {
       startIcon={iconComponent}
       style={{ backgroundColor: bgColor }}
     >
-      {title}
+      <Link to={to} style={{color:"#fff"}}>
+        {title}
+      </Link>
     </BootstrapButton>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery } from "gatsby"
 import {
   TiSocialTwitter,
   TiSocialLinkedin,
@@ -8,12 +8,10 @@ import {
 } from "react-icons/ti"
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
+import CustomBtn from '../button'
+import MailOutlineIcon from '@material-ui/icons/MailOutline'
 
 const useStyles = makeStyles((theme) => ({
-  navTxtEn: {
-    fontSize: "16px",
-    color: "#fff"
-  },
   navTxt: {
     fontSize: "14px",
     color: "#fff"
@@ -22,6 +20,19 @@ const useStyles = makeStyles((theme) => ({
 
 const Footer = () => {
   const classes = useStyles()
+  const data = useStaticQuery(graphql`
+    {
+      allTopicsJson {
+        edges {
+          node {
+            name
+            slug
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <footer id="footer">
       <div className="container">
@@ -74,28 +85,24 @@ const Footer = () => {
         <div id="nav">
           <ul>
             <li>
-              <Link to="/#solution">
-                <span className={classes.navTxtEn}>SOLUTION</span><br/>
-                <span className={classes.navTxt}>事業</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/#works">
-                <span className={classes.navTxtEn}>WORKS</span><br/>
-                <span className={classes.navTxt}>制作事例</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/#about">
-                <span className={classes.navTxtEn}>ABOUT</span><br/>
-                <span className={classes.navTxt}>INOLABOとは</span>
-              </Link>
-            </li>
-            <li>
               <Link to="/blog">
-                <span className={classes.navTxtEn}>BLOG</span><br/>
-                <span className={classes.navTxt}>ブログ</span>
+                <span className={classes.navTxt}>トップ</span>
               </Link>
+            </li>
+            {data.allTopicsJson.edges.map(({ node }) => (
+              <li key={node.slug}>
+                <Link to={`/${node.slug}`}>
+                  <span className={classes.navTxt}>{node.name}</span>
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link to="/about">
+                <span className={classes.navTxt}>INOLABOについて</span>
+              </Link>
+            </li>
+            <li>
+              <CustomBtn title="お仕事の依頼" iconComponent={<MailOutlineIcon />} bgColor="primary" to="/"/>
             </li>
           </ul>
         </div>

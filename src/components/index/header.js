@@ -68,7 +68,7 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
               </Link>
             </li>
             <li>
-              <CustomBtn title="お問い合わせ" iconComponent={<MailOutlineIcon />} bgColor="#F2994A" />
+              <CustomBtn title="お問い合わせ" iconComponent={<MailOutlineIcon />} bgColor="#F2994A" to="/inquiry" />
             </li>
           </ul>
           {menuOpen ? (
