@@ -7,7 +7,8 @@ import Image from "../image"
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    padding: theme.spacing(10)
+    padding: theme.spacing(5),
+    marginTop: '50px'
   },
   title: {
     borderBottom: "solid 1px",
@@ -25,7 +26,7 @@ const SectionAbout = () => {
   const classes = useStyles();
 
   return (
-    <div id="about" style={{ paddingTop: "50px", background: "#EFEFEF" }}>
+    <div id="about" style={{ paddingTop: "50px", paddingBottom: "100px", background: "#EFEFEF" }}>
       <Typography align="left" variant="h4" component="h2">
         <span className={classes.title}>ABOUT</span>
       </Typography>

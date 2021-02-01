@@ -26,12 +26,12 @@ const useStyles = makeStyles((theme) => ({
     width: "1200px",
     fontSize: "48px",
     "@media (max-width: 1300px)": {
-      width: "758px",
+      width: "100%",
       paddingLeft: "20px"
     },
     "@media (max-width: 840px)": {
-      width: "758px",
-      fontSize: "6vw",
+      width: "100%",
+      fontSize: "20px",
       paddingLeft: "20px"
     }
   },
@@ -40,12 +40,12 @@ const useStyles = makeStyles((theme) => ({
     width: "1200px",
     fontSize: "24px",
     "@media (max-width: 1300px)": {
-      width: "758px",
+      width: "100%",
       paddingLeft: "20px"
     },
     "@media (max-width: 840px)": {
-      width: "758px",
-      fontSize: "4vw",
+      width: "100%",
+      fontSize: "16px",
       paddingLeft: "20px"
     }
   }

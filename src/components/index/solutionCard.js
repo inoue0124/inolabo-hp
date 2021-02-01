@@ -46,41 +46,37 @@ const SolutionCard = ({title, description, imgFileName, isImageLeft}) => {
 
   if (isImageLeft) {
     return (
-      <Grid container className={classes.root}>
-        <Grid container justify="center">
-          <Grid md={5} sm={12}>
-            <Image height="100%" filename={imgFileName} alt="heroイメージ" />
-          </Grid>
-          <Grid md={7} sm={12} justify="center">
-            <p className={classes.txtBox}>
-              <Typography align="left" component="h2" className={classes.txtTitle}>
-                <span>{title}</span>
-              </Typography>
-              <Typography align="left" component="h2" className={classes.txtDescription}>
-                <span>{description}</span>
-              </Typography>
-            </p>
-          </Grid>
+      <Grid container justify="center" className={classes.root}>
+        <Grid md={5} sm={12}>
+          <Image height="100%" filename={imgFileName} alt="heroイメージ" />
+        </Grid>
+        <Grid md={7} sm={12} justify="center">
+          <p className={classes.txtBox}>
+            <Typography align="left" component="h2" className={classes.txtTitle}>
+              <span>{title}</span>
+            </Typography>
+            <Typography align="left" component="h2" className={classes.txtDescription}>
+              <span>{description}</span>
+            </Typography>
+          </p>
         </Grid>
       </Grid>
     )
   } else {
     return (
-      <Grid container className={classes.root}>
-        <Grid container justify="center">
-          <Grid md={7} sm={12} justify="center">
-            <p className={classes.txtBox}>
-              <Typography align="left" component="h2" className={classes.txtTitle}>
-                <span>{title}</span>
-              </Typography>
-              <Typography align="left" component="h2" className={classes.txtDescription}>
-                <span>{description}</span>
-              </Typography>
-            </p>
-          </Grid>
-          <Grid md={5} sm={12}>
-            <Image height="100%" filename={imgFileName} alt="heroイメージ" />
-          </Grid>
+      <Grid container justify="center" className={classes.root}>
+        <Grid md={7} sm={12} justify="center">
+          <p className={classes.txtBox}>
+            <Typography align="left" component="h2" className={classes.txtTitle}>
+              <span>{title}</span>
+            </Typography>
+            <Typography align="left" component="h2" className={classes.txtDescription}>
+              <span>{description}</span>
+            </Typography>
+          </p>
+        </Grid>
+        <Grid md={5} sm={12}>
+          <Image height="100%" filename={imgFileName} alt="heroイメージ" />
         </Grid>
       </Grid>
     )

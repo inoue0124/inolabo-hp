@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    padding: theme.spacing(10)
+    padding: theme.spacing(5)
   },
   title: {
     borderBottom: "solid 1px",

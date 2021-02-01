@@ -9,10 +9,11 @@ import bgImg from '../../../static/images/bgConv.png'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    padding: theme.spacing(10),
+    padding: theme.spacing(5),
     color: '#fff',
     backgroundImage: `url(${bgImg})`,
-    backgroundSize: "cover"
+    backgroundSize: "cover",
+    textAlign: 'center'
   },
   convTitle: {
     margin: "0 auto",
@@ -34,16 +35,14 @@ const SectionConv = () => {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.root}>
-      <Grid container justify="center" spacing={10}>
-        <Grid item xs={12}>
-          <Typography align="center" variant="h3" component="h2" className={classes.convTitle}>
-            開発のご相談承ります。
-          </Typography>
-          <Typography align="center" variant="h6" component="h3" className={classes.convDescription}>
-            INOLABOは、システムの機能数に応じたわかりやすい料金設定をご用意しております。
-          </Typography>
-        </Grid>
+    <Grid container justify="center" className={classes.root}>
+      <Grid item xs={12}>
+        <Typography variant="h3" component="h2" className={classes.convTitle}>
+          開発のご相談承ります。
+        </Typography>
+        <Typography variant="h6" component="h3" className={classes.convDescription}>
+          INOLABOは、システムの機能数に応じたわかりやすい料金設定をご用意しております。
+        </Typography>
         <CustomBtn title="お問い合わせ" iconComponent={<MailOutlineIcon />} bgColor="#F2994A" to="/inquiry"/>
       </Grid>
     </Grid>

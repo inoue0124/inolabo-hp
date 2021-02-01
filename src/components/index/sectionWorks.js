@@ -10,7 +10,8 @@ import talkativeImg from '../../../static/images/solutionLanguage.png'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    padding: theme.spacing(10)
+    padding: theme.spacing(5),
+    marginTop: '30px'
   },
   title: {
     borderBottom: "solid 1px",
