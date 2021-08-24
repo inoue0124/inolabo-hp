@@ -11,8 +11,11 @@ const Sidebar = ({ posts }) => {
             return (
               <CardSmall
                 key={node.fields.slug}
+                fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                title={node.frontmatter.title}
+                category={node.frontmatter.category}
+                tags={node.frontmatter.tags}
                 slug={node.fields.slug}
-                frontmatter={node.frontmatter}
               />
             )
           } else return null

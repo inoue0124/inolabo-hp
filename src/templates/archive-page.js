@@ -20,8 +20,11 @@ function ArchivePageTemplate({ data, pageContext }) {
             return (
               <Card
                 key={node.id}
+                fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                title={node.frontmatter.title}
+                category={node.frontmatter.category}
+                tags={node.frontmatter.tags}
                 slug={node.fields.slug}
-                frontmatter={node.frontmatter}
               />
             )
           })}
@@ -47,18 +50,25 @@ function ArchivePageTemplate({ data, pageContext }) {
                 <span>前へ</span>
               </Link>
             )}
-            {currentPage > 0 && [...Array(numPages)].map((_, index) => {
-              if (index+1===currentPage) {
-                return (
-                  <Link disabled className="pagination-disabled">{index+1}</Link>
-                )
-              } else {
-                return (
-                  <Link className="pagination-link" to={`/archive/${index===0 ? "" : index+1}`}>{index+1}</Link>
-                )
-              }
-            }
-            )}
+            {currentPage > 0 &&
+              [...Array(numPages)].map((_, index) => {
+                if (index + 1 === currentPage) {
+                  return (
+                    <Link disabled className="pagination-disabled">
+                      {index + 1}
+                    </Link>
+                  )
+                } else {
+                  return (
+                    <Link
+                      className="pagination-link"
+                      to={`/archive/${index === 0 ? "" : index + 1}`}
+                    >
+                      {index + 1}
+                    </Link>
+                  )
+                }
+              })}
             {currentPage < numPages ? (
               <Link
                 to={`/archive/${currentPage + 1}`}
@@ -75,7 +85,7 @@ function ArchivePageTemplate({ data, pageContext }) {
             )}
           </div>
         </div>
-        <Sidebar posts={data.allMarkdownRemark.edges}/>
+        <Sidebar posts={data.allMarkdownRemark.edges} />
       </div>
     </Layout>
   )

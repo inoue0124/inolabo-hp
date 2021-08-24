@@ -16,6 +16,14 @@ const Layout = ({ children }) => {
           title
         }
       }
+      allTopicsJson {
+        edges {
+          node {
+            name
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -29,7 +37,7 @@ const Layout = ({ children }) => {
       <div className="container">
         <main>{children}</main>
       </div>
-      <Footer/>
+      <Footer props={data.allTopicsJson.edges} />
     </>
   )
 }

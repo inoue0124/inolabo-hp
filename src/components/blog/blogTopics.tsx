@@ -1,12 +1,23 @@
 import { Link, useStaticQuery, graphql, navigate } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-
+import React, { useState } from "react"
 import { FiMenu } from "react-icons/fi"
 import { MdClose } from "react-icons/md"
 import { IoIosSearch } from "react-icons/io"
 
-const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
+type Props = {
+  siteTitle: string
+  isMenuOpen: boolean
+  setMenuOpen: (flag: boolean) => void
+  isTransparent: boolean
+}
+
+const Header: React.FC<Props> = ({
+  siteTitle,
+  isMenuOpen,
+  setMenuOpen,
+  isTransparent,
+}) => {
+  const [query, setQuery] = useState<string>("")
   const data = useStaticQuery(graphql`
     {
       allTopicsJson {
@@ -21,12 +32,12 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
   `)
 
   return (
-    <header id="header" className={`${isTransparent ? 'transparent' : ''}`}>
+    <header id="header" className={`${isTransparent ? "transparent" : ""}`}>
       <div className="container">
         <button
           id="site-logo-wrapper"
           onClick={() => {
-            if (menuOpen) {
+            if (isMenuOpen) {
               setMenuOpen(false)
             }
           }}
@@ -44,7 +55,7 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
 
         <nav id="nav">
           <ul>
-            {data.allTopicsJson.edges.map(({ node }) => (
+            {data.allTopicsJson.edges.map(({ node }: any) => (
               <li key={node.slug}>
                 <Link to={`/${node.slug}`}>{node.name}</Link>
               </li>
@@ -57,14 +68,18 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
             <form
               onSubmit={e => {
                 e.preventDefault()
-                navigate(`/blog?s=${e.target.query.value.toLowerCase()}`)
+                navigate(`/blog?s=${query.toLowerCase()}`)
               }}
             >
-              <input type="text" id="query" aria-label="Search" />
+              <input
+                type="text"
+                aria-label="Search"
+                onChange={e => setQuery(e.target.value)}
+              />
             </form>
             <IoIosSearch />
           </div>
-          {menuOpen ? (
+          {isMenuOpen ? (
             <button className="menu-button" onClick={() => setMenuOpen(false)}>
               <MdClose />
             </button>
@@ -75,10 +90,10 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
           )}
         </nav>
       </div>
-      {menuOpen && (
+      {isMenuOpen && (
         <div id="menu">
           <ul>
-            {data.allTopicsJson.edges.map(({ node }) => (
+            {data.allTopicsJson.edges.map(({ node }: any) => (
               <li key={node.slug}>
                 <Link to={`/${node.slug}`}>{node.name}</Link>
               </li>
@@ -91,14 +106,6 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
       )}
     </header>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header

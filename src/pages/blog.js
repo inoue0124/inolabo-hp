@@ -11,7 +11,7 @@ import Sidebar from "../components/blog/sidebar"
 
 const BlogPage = props => {
   const data = useStaticQuery(graphql`
-    {
+    query BlogPage {
       tagsGroup: allMarkdownRemark(limit: 100) {
         group(field: frontmatter___tags) {
           fieldValue
@@ -70,14 +70,17 @@ const BlogPage = props => {
                 return (
                   <Card
                     key={node.id}
+                    fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                    title={node.frontmatter.title}
+                    category={node.frontmatter.category}
+                    tags={node.frontmatter.tags}
                     slug={node.fields.slug}
-                    frontmatter={node.frontmatter}
                   />
                 )
               }
             })}
           </div>
-          <Sidebar posts={data.allMarkdownRemark.edges}/>
+          <Sidebar posts={data.allMarkdownRemark.edges} />
         </div>
         <Link to="/archive/2" id="archive-link">
           もっと見る

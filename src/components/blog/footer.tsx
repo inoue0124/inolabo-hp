@@ -1,37 +1,30 @@
 import React from "react"
-import { Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import {
   TiSocialTwitter,
   TiSocialLinkedin,
   TiSocialFacebook,
   TiSocialYoutube,
 } from "react-icons/ti"
-import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
-import CustomBtn from '../button'
-import MailOutlineIcon from '@material-ui/icons/MailOutline'
+import Typography from "@material-ui/core/Typography"
+import { makeStyles } from "@material-ui/core/styles"
+import CustomBtn from "../button"
+import MailOutlineIcon from "@material-ui/icons/MailOutline"
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   navTxt: {
     fontSize: "14px",
-    color: "#fff"
-  }
-}));
+    color: "#fff",
+  },
+}))
 
-const Footer = () => {
+type Props = {
+  name: string
+  slug: string
+}
+
+const Footer: React.FC<{ props: any }> = ({ props }) => {
   const classes = useStyles()
-  const data = useStaticQuery(graphql`
-    {
-      allTopicsJson {
-        edges {
-          node {
-            name
-            slug
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <footer id="footer">
@@ -43,7 +36,7 @@ const Footer = () => {
           <Typography align="left" variant="body2">
             © {new Date().getFullYear()} INOLABO, All Right Reserved
           </Typography>
-          {/* <div className="footer-social-icons">
+          <div className="footer-social-icons">
             <a
               target="_blank"
               href="https://twitter.com/"
@@ -80,7 +73,7 @@ const Footer = () => {
                 <TiSocialFacebook className="footer-social-icon" />
               </span>
             </a>
-          </div> */}
+          </div>
         </div>
         <div id="nav">
           <ul>
@@ -89,10 +82,10 @@ const Footer = () => {
                 <span className={classes.navTxt}>トップ</span>
               </Link>
             </li>
-            {data.allTopicsJson.edges.map(({ node }) => (
-              <li key={node.slug}>
-                <Link to={`/${node.slug}`}>
-                  <span className={classes.navTxt}>{node.name}</span>
+            {props.map((prop: any) => (
+              <li key={prop.node.slug}>
+                <Link to={`/${prop.node.slug}`}>
+                  <span className={classes.navTxt}>{prop.node.name}</span>
                 </Link>
               </li>
             ))}
@@ -102,7 +95,12 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <CustomBtn title="お仕事の依頼" iconComponent={<MailOutlineIcon />} bgColor="primary" to="/"/>
+              <CustomBtn
+                title="お仕事の依頼"
+                iconComponent={<MailOutlineIcon />}
+                bgColor="primary"
+                to="/"
+              />
             </li>
           </ul>
         </div>
