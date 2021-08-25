@@ -2,10 +2,15 @@ import React from "react"
 import Card from "./card"
 import Sidebar from "./sidebar"
 
-const Search = ({ markdown, query }) => {
+type Props = {
+  markdown: any
+  query: string
+}
+
+const Search: React.FC<Props> = ({ markdown, query }) => {
   const blogPosts = markdown.edges
 
-  const filteredPosts = blogPosts.filter(({ node }) => {
+  const filteredPosts = blogPosts.filter(({ node }: any) => {
     const { frontmatter } = node
 
     const titleMatch = frontmatter.title
@@ -15,8 +20,8 @@ const Search = ({ markdown, query }) => {
       .toLowerCase()
       .includes(query.toLowerCase())
     const tagsMatch = frontmatter.tags
-      .map(tag => tag.toLowerCase())
-      .some(tag => tag.includes(query.toLowerCase()))
+      .map((tag: string) => tag.toLowerCase())
+      .some((tag: string) => tag.includes(query.toLowerCase()))
     const descriptionMatch = frontmatter.description
       .toLowerCase()
       .includes(query.toLowerCase())
@@ -36,7 +41,7 @@ const Search = ({ markdown, query }) => {
         <div className="flex-layout">
           <div className="cards">
             <h2 id="articles-title">記事一覧</h2>
-            {filteredPosts.map(({ node }, index) => {
+            {filteredPosts.map(({ node }: any, index: number) => {
               return (
                 <Card
                   key={node.id}

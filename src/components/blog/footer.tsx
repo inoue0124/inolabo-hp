@@ -19,11 +19,10 @@ const useStyles = makeStyles(theme => ({
 }))
 
 type Props = {
-  name: string
-  slug: string
+  props: any
 }
 
-const Footer: React.FC<{ props: any }> = ({ props }) => {
+const Footer: React.FC<Props> = ({ props }) => {
   const classes = useStyles()
 
   return (

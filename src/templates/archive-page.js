@@ -92,6 +92,7 @@ function ArchivePageTemplate({ data, pageContext }) {
 }
 
 export default ArchivePageTemplate
+
 export const pageQuery = graphql`
   query archiveQuery($skip: Int!, $limit: Int!) {
     site {

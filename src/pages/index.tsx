@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles"
 import Image from "../components/image"
 import Header from "../components/index/header"
 import Footer from "../components/index/footer"
@@ -9,12 +9,11 @@ import SectionAbout from "../components/index/sectionAbout"
 import SectionConv from "../components/index/sectionConv"
 import SEO from "../components/seo"
 import "../styles/styles.css"
-import Typography from '@material-ui/core/Typography'
-import CustomBtn from '../components/button'
-import MailOutlineIcon from '@material-ui/icons/MailOutline'
+import Typography from "@material-ui/core/Typography"
+import CustomBtn from "../components/button"
+import MailOutlineIcon from "@material-ui/icons/MailOutline"
 
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   heroTxtBox: {
     position: "absolute",
     top: "40%",
@@ -27,13 +26,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "48px",
     "@media (max-width: 1300px)": {
       width: "100%",
-      paddingLeft: "20px"
+      paddingLeft: "20px",
     },
     "@media (max-width: 840px)": {
       width: "100%",
       fontSize: "20px",
-      paddingLeft: "20px"
-    }
+      paddingLeft: "20px",
+    },
   },
   heroTxtH2: {
     margin: "0 auto",
@@ -41,56 +40,62 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "24px",
     "@media (max-width: 1300px)": {
       width: "100%",
-      paddingLeft: "20px"
+      paddingLeft: "20px",
     },
     "@media (max-width: 840px)": {
       width: "100%",
       fontSize: "16px",
-      paddingLeft: "20px"
-    }
-  }
-}));
+      paddingLeft: "20px",
+    },
+  },
+}))
 
 const IndexPage = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [isTransparent, setIsTransparent] = useState(true)
-  const target = useRef(null);
-  useEffect(()=>{
-    const cb = (entries) => {
-      entries.forEach((entry)=>{
-        if(entry.isIntersecting){
+  const target: React.MutableRefObject<any> = useRef(null)
+  useEffect(() => {
+    const cb = (entries: any) => {
+      entries.forEach((entry: any) => {
+        if (entry.isIntersecting) {
           setIsTransparent(true)
-        }else {
+        } else {
           setIsTransparent(false)
         }
       })
-    };
-    const observer = new IntersectionObserver(cb);
+    }
+    const observer = new IntersectionObserver(cb)
     observer.observe(target.current)
-  },[])
-  const classes = useStyles();
+  }, [])
+  const classes = useStyles()
 
   return (
     <>
       <SEO title="イノラボ" />
       <Header
         siteTitle="INOLABO"
-        menuOpen={menuOpen}
+        isMenuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         isTransparent={isTransparent}
       />
       <Image height="100vh" filename="whiteImage.jpg" alt="heroイメージ" />
-      <div ref={target} style={{position: "absolute", top: 0}}></div>
+      <div ref={target} style={{ position: "absolute", top: 0 }}></div>
       <div className={classes.heroTxtBox}>
         <Typography align="left" component="h1" className={classes.heroTxtH1}>
           想像を形にする。
         </Typography>
         <Typography align="left" component="h1" className={classes.heroTxtH2}>
-          INOLABOは<br/>
+          INOLABOは
+          <br />
           明瞭な価格と確かな技術を約束します。
         </Typography>
         <h1 className={classes.heroTxtH2}>
-          <CustomBtn title="お問い合わせ" iconComponent={<MailOutlineIcon />} bgColor="#F2994A" to="/inquiry"/>
+          <CustomBtn
+            title="お問い合わせ"
+            iconComponent={<MailOutlineIcon />}
+            bgColor="#F2994A"
+            to="/inquiry"
+          />
         </h1>
       </div>
 

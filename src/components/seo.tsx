@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 type Props = {
   description?: string
   lang?: string
-  meta: any[]
+  meta?: any[]
   title: string
 }
 
@@ -66,7 +66,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ].concat(meta!)}
     />
   )
 }

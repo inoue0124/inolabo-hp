@@ -1,24 +1,24 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
+import Grid from "@material-ui/core/Grid"
 import Image from "../image"
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography"
 
 const useStyles = makeStyles({
   root: {
     padding: "50px",
-    width: "90%", 
+    width: "90%",
     margin: "0 auto",
     "@media (max-width: 840px)": {
-      padding: "0 20px"
-    }
+      padding: "0 20px",
+    },
   },
   txtBox: {
     padding: "50px",
     color: "#505050",
     "@media (max-width: 840px)": {
-      padding: "50px 20px"
-    }
+      padding: "50px 20px",
+    },
   },
   txtTitle: {
     margin: "0 auto",
@@ -29,20 +29,32 @@ const useStyles = makeStyles({
     lineHeight: 1,
     display: "inline-block",
     "@media (max-width: 840px)": {
-      fontSize: "6vw"
-    }
+      fontSize: "6vw",
+    },
   },
   txtDescription: {
     margin: "0 auto",
     fontSize: "20px",
     "@media (max-width: 840px)": {
-      fontSize: "4vw"
-    }
-  }
-});
+      fontSize: "4vw",
+    },
+  },
+})
 
-const SolutionCard = ({title, description, imgFileName, isImageLeft}) => {
-  const classes = useStyles();
+type Props = {
+  title: string
+  description: string
+  imgFileName: string
+  isImageLeft: boolean
+}
+
+const SolutionCard: React.FC<Props> = ({
+  title,
+  description,
+  imgFileName,
+  isImageLeft,
+}) => {
+  const classes = useStyles()
 
   if (isImageLeft) {
     return (
@@ -52,10 +64,18 @@ const SolutionCard = ({title, description, imgFileName, isImageLeft}) => {
         </Grid>
         <Grid md={7} sm={12} justify="center">
           <p className={classes.txtBox}>
-            <Typography align="left" component="h2" className={classes.txtTitle}>
+            <Typography
+              align="left"
+              component="h2"
+              className={classes.txtTitle}
+            >
               <span>{title}</span>
             </Typography>
-            <Typography align="left" component="h2" className={classes.txtDescription}>
+            <Typography
+              align="left"
+              component="h2"
+              className={classes.txtDescription}
+            >
               <span>{description}</span>
             </Typography>
           </p>
@@ -67,10 +87,18 @@ const SolutionCard = ({title, description, imgFileName, isImageLeft}) => {
       <Grid container justify="center" className={classes.root}>
         <Grid md={7} sm={12} justify="center">
           <p className={classes.txtBox}>
-            <Typography align="left" component="h2" className={classes.txtTitle}>
+            <Typography
+              align="left"
+              component="h2"
+              className={classes.txtTitle}
+            >
               <span>{title}</span>
             </Typography>
-            <Typography align="left" component="h2" className={classes.txtDescription}>
+            <Typography
+              align="left"
+              component="h2"
+              className={classes.txtDescription}
+            >
               <span>{description}</span>
             </Typography>
           </p>
@@ -81,7 +109,6 @@ const SolutionCard = ({title, description, imgFileName, isImageLeft}) => {
       </Grid>
     )
   }
-  
 }
 
 export default SolutionCard

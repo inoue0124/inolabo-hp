@@ -2,7 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
 
-const Featured: React.FC = ({ markdown }: any) => {
+type Props = {
+  markdown: any
+}
+
+const Featured: React.FC<Props> = ({ markdown }) => {
   if (!markdown) {
     return <div>...loading</div>
   } else {

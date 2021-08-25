@@ -4465,10 +4465,10 @@ type BlogPageQuery = { readonly tagsGroup: { readonly group: ReadonlyArray<Pick<
         )> }
       ) }> } };
 
-type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+type TopicsPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_2_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>>, readonly edges: ReadonlyArray<{ readonly node: { readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, readonly frontmatter: Maybe<(
+type TopicsPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>>, readonly edges: ReadonlyArray<{ readonly node: { readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, readonly frontmatter: Maybe<(
           Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description' | 'tags' | 'category'>
           & { readonly featuredImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> }
         )> } }> } };
@@ -4478,38 +4478,28 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
-type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_3_Query = { readonly allTopicsJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<TopicsJson, 'name' | 'slug'> }> } };
+type HeaderQuery = { readonly allTopicsJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<TopicsJson, 'name' | 'slug'> }> } };
 
-type BlogTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BlogTitleQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allTopicsJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<TopicsJson, 'name' | 'slug'> }> } };
-
-type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
+type BlogTitleQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_4_Query = { readonly allTopicsJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<TopicsJson, 'name' | 'slug'> }> } };
+type BlogTitleQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allTopicsJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<TopicsJson, 'name' | 'slug'> }> } };
 
-type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
+type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_5_Query = { readonly images: { readonly edges: ReadonlyArray<{ readonly node: (
+type Unnamed_2_Query = { readonly images: { readonly edges: ReadonlyArray<{ readonly node: (
         Pick<File, 'relativePath' | 'name'>
         & { readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluidFragment> }> }
       ) }> } };
 
-type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SiteTitleQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type Unnamed_6_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
+type Unnamed_3_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

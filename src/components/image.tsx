@@ -4,8 +4,8 @@ import Img from "gatsby-image"
 
 type Props = {
   filename: string
-  height: number
-  width: number
+  height?: string | number
+  width?: string | number
   alt: string
 }
 

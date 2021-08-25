@@ -1,12 +1,16 @@
 import React from "react"
 import CardSmall from "./cardSmall"
 
-const Sidebar = ({ posts }) => {
+type Props = {
+  posts: any
+}
+
+const Sidebar: React.FC<Props> = ({ posts }) => {
   return (
     <div className="sidebar">
       <h2 className="sidebar-header">人気記事一覧</h2>
       <div className="sidebar-popular">
-        {posts.map(({ node }, index) => {
+        {posts.map(({ node }: any, index: number) => {
           if (index > 2 && index < 5) {
             return (
               <CardSmall
@@ -14,7 +18,6 @@ const Sidebar = ({ posts }) => {
                 fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
                 title={node.frontmatter.title}
                 category={node.frontmatter.category}
-                tags={node.frontmatter.tags}
                 slug={node.fields.slug}
               />
             )
@@ -24,5 +27,4 @@ const Sidebar = ({ posts }) => {
     </div>
   )
 }
-
 export default Sidebar
