@@ -4483,11 +4483,6 @@ type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
 
 type HeaderQuery = { readonly allTopicsJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<TopicsJson, 'name' | 'slug'> }> } };
 
-type BlogTitleQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BlogTitleQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allTopicsJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<TopicsJson, 'name' | 'slug'> }> } };
-
 type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4495,6 +4490,11 @@ type Unnamed_2_Query = { readonly images: { readonly edges: ReadonlyArray<{ read
         Pick<File, 'relativePath' | 'name'>
         & { readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluidFragment> }> }
       ) }> } };
+
+type BlogTitleQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BlogTitleQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allTopicsJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<TopicsJson, 'name' | 'slug'> }> } };
 
 type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
