@@ -61,8 +61,11 @@ function TagPageTemplate({ pageContext }) {
               return (
                 <Card
                   key={node.id}
+                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                  title={node.frontmatter.title}
+                  category={node.frontmatter.category}
+                  tags={node.frontmatter.tags}
                   slug={node.fields.slug}
-                  frontmatter={node.frontmatter}
                 />
               )
             })}
@@ -71,7 +74,7 @@ function TagPageTemplate({ pageContext }) {
               <FaAngleDoubleRight className="icon-right icon-fix" />
             </Link>
           </div>
-          <Sidebar posts={data.allMarkdownRemark.edges}/>
+          <Sidebar posts={data.allMarkdownRemark.edges} />
         </div>
       </div>
     </Layout>

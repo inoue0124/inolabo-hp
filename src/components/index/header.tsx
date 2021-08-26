@@ -4,39 +4,48 @@ import React from "react"
 
 import { FiMenu } from "react-icons/fi"
 import { MdClose } from "react-icons/md"
-import CustomBtn from '../button'
-import MailOutlineIcon from '@material-ui/icons/MailOutline'
-import { makeStyles } from '@material-ui/core/styles'
+import CustomBtn from "../button"
+import MailOutlineIcon from "@material-ui/icons/MailOutline"
+import { makeStyles } from "@material-ui/core/styles"
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   navTxtEn: {
     fontSize: "16px",
-    color: "#505050"
+    color: "#505050",
   },
   navTxt: {
     fontSize: "14px",
-    color: "#505050"
-  }
-}));
+    color: "#505050",
+  },
+}))
 
-const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
-  const classes = useStyles();
+type Props = {
+  siteTitle: string
+  isMenuOpen: boolean
+  setMenuOpen: (flag: boolean) => void
+  isTransparent: boolean
+}
+
+const Header: React.FC<Props> = ({
+  siteTitle,
+  isMenuOpen,
+  setMenuOpen,
+  isTransparent,
+}) => {
+  const classes = useStyles()
 
   return (
-    <header id="header" className={`${isTransparent ? 'transparent' : ''}`}>
+    <header id="header" className={`${isTransparent ? "transparent" : ""}`}>
       <div className="container">
         <button
           id="site-logo-wrapper"
           onClick={() => {
-            if (menuOpen) {
+            if (isMenuOpen) {
               setMenuOpen(false)
             }
           }}
         >
-          <Link
-            to="/"
-            id="site-logo"
-          >
+          <Link to="/" id="site-logo">
             {siteTitle}
           </Link>
         </button>
@@ -45,33 +54,42 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
           <ul>
             <li>
               <Link to="/#solution">
-                <span className={classes.navTxtEn}>SOLUTION</span><br/>
+                <span className={classes.navTxtEn}>SOLUTION</span>
+                <br />
                 <span className={classes.navTxt}>事業</span>
               </Link>
             </li>
             <li>
               <Link to="/#works">
-                <span className={classes.navTxtEn}>WORKS</span><br/>
+                <span className={classes.navTxtEn}>WORKS</span>
+                <br />
                 <span className={classes.navTxt}>制作事例</span>
               </Link>
             </li>
             <li>
               <Link to="/#about">
-                <span className={classes.navTxtEn}>ABOUT</span><br/>
+                <span className={classes.navTxtEn}>ABOUT</span>
+                <br />
                 <span className={classes.navTxt}>INOLABOとは</span>
               </Link>
             </li>
             <li>
               <Link to="/blog">
-                <span className={classes.navTxtEn}>BLOG</span><br/>
+                <span className={classes.navTxtEn}>BLOG</span>
+                <br />
                 <span className={classes.navTxt}>ブログ</span>
               </Link>
             </li>
             <li>
-              <CustomBtn title="お問い合わせ" iconComponent={<MailOutlineIcon />} bgColor="#F2994A" to="/inquiry" />
+              <CustomBtn
+                title="お問い合わせ"
+                iconComponent={<MailOutlineIcon />}
+                bgColor="#F2994A"
+                to="/inquiry"
+              />
             </li>
           </ul>
-          {menuOpen ? (
+          {isMenuOpen ? (
             <button className="menu-button" onClick={() => setMenuOpen(false)}>
               <MdClose />
             </button>
@@ -82,30 +100,34 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
           )}
         </nav>
       </div>
-      {menuOpen && (
+      {isMenuOpen && (
         <div id="menu">
           <ul>
             <li>
               <Link to="/#solution">
-                <span className={classes.navTxtEn}>SOLUTION</span><br/>
+                <span className={classes.navTxtEn}>SOLUTION</span>
+                <br />
                 <span className={classes.navTxt}>事業</span>
               </Link>
             </li>
             <li>
               <Link to="/#works">
-                <span className={classes.navTxtEn}>WORKS</span><br/>
+                <span className={classes.navTxtEn}>WORKS</span>
+                <br />
                 <span className={classes.navTxt}>制作事例</span>
               </Link>
             </li>
             <li>
               <Link to="/#about">
-                <span className={classes.navTxtEn}>ABOUT</span><br/>
+                <span className={classes.navTxtEn}>ABOUT</span>
+                <br />
                 <span className={classes.navTxt}>INOLABOとは</span>
               </Link>
             </li>
             <li>
               <Link to="/blog">
-                <span className={classes.navTxtEn}>BLOG</span><br/>
+                <span className={classes.navTxtEn}>BLOG</span>
+                <br />
                 <span className={classes.navTxt}>ブログ</span>
               </Link>
             </li>
@@ -114,14 +136,6 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen, isTransparent }) => {
       )}
     </header>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header

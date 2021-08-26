@@ -8,7 +8,7 @@ import Sidebar from "../components/blog/sidebar"
 
 const TopicPageTemplate = ({ pageContext }) => {
   const data = useStaticQuery(graphql`
-    {
+    query TopicPage {
       site {
         siteMetadata {
           title
@@ -78,13 +78,16 @@ const TopicPageTemplate = ({ pageContext }) => {
             return (
               <Card
                 key={node.fields.slug}
+                fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                title={node.frontmatter.title}
+                category={node.frontmatter.category}
+                tags={node.frontmatter.tags}
                 slug={node.fields.slug}
-                frontmatter={node.frontmatter}
               />
             )
           })}
         </div>
-        <Sidebar posts={data.allMarkdownRemark.edges}/>
+        <Sidebar posts={data.allMarkdownRemark.edges} />
       </div>
     </Layout>
   )

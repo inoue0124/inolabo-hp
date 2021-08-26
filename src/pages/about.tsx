@@ -7,8 +7,8 @@ import SectionAbout from "../components/index/sectionAbout"
 const AboutPage = () => {
   return (
     <Layout>
-      <SEO title="About Blog Boost Starter" />
-      <SectionAbout/>
+      <SEO title="INOLABOについて" />
+      <SectionAbout />
     </Layout>
   )
 }

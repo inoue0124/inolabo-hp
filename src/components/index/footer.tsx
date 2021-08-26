@@ -1,26 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
-import {
-  TiSocialTwitter,
-  TiSocialLinkedin,
-  TiSocialFacebook,
-  TiSocialYoutube,
-} from "react-icons/ti"
-import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
+import Typography from "@material-ui/core/Typography"
+import { makeStyles } from "@material-ui/core/styles"
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   navTxtEn: {
     fontSize: "16px",
-    color: "#fff"
+    color: "#fff",
   },
   navTxt: {
     fontSize: "14px",
-    color: "#fff"
-  }
-}));
+    color: "#fff",
+  },
+}))
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const classes = useStyles()
   return (
     <footer id="footer">
@@ -75,25 +69,29 @@ const Footer = () => {
           <ul>
             <li>
               <Link to="/#solution">
-                <span className={classes.navTxtEn}>SOLUTION</span><br/>
+                <span className={classes.navTxtEn}>SOLUTION</span>
+                <br />
                 <span className={classes.navTxt}>事業</span>
               </Link>
             </li>
             <li>
               <Link to="/#works">
-                <span className={classes.navTxtEn}>WORKS</span><br/>
+                <span className={classes.navTxtEn}>WORKS</span>
+                <br />
                 <span className={classes.navTxt}>制作事例</span>
               </Link>
             </li>
             <li>
               <Link to="/#about">
-                <span className={classes.navTxtEn}>ABOUT</span><br/>
+                <span className={classes.navTxtEn}>ABOUT</span>
+                <br />
                 <span className={classes.navTxt}>INOLABOとは</span>
               </Link>
             </li>
             <li>
               <Link to="/blog">
-                <span className={classes.navTxtEn}>BLOG</span><br/>
+                <span className={classes.navTxtEn}>BLOG</span>
+                <br />
                 <span className={classes.navTxt}>ブログ</span>
               </Link>
             </li>

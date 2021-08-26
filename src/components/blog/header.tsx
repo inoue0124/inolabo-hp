@@ -1,16 +1,21 @@
 import { Link, useStaticQuery, graphql, navigate } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-
+import React, { useState } from "react"
 import { FiMenu } from "react-icons/fi"
 import { MdClose } from "react-icons/md"
 import { IoIosSearch } from "react-icons/io"
-import CustomBtn from '../button'
-import MailOutlineIcon from '@material-ui/icons/MailOutline'
+import CustomBtn from "../button"
+import MailOutlineIcon from "@material-ui/icons/MailOutline"
 
-const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
-  const data = useStaticQuery(graphql`
-    {
+type Props = {
+  siteTitle: string
+  isMenuOpen: boolean
+  setMenuOpen: (flag: boolean) => void
+}
+
+const Header: React.FC<Props> = ({ siteTitle, isMenuOpen, setMenuOpen }) => {
+  const [query, setQuery] = useState<string>("")
+  const data = useStaticQuery<GatsbyTypes.HeaderQuery>(graphql`
+    query Header {
       allTopicsJson {
         edges {
           node {
@@ -28,7 +33,7 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
         <button
           id="site-logo-wrapper"
           onClick={() => {
-            if (menuOpen) {
+            if (isMenuOpen) {
               setMenuOpen(false)
             }
           }}
@@ -49,10 +54,14 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
             <form
               onSubmit={e => {
                 e.preventDefault()
-                navigate(`/blog?s=${e.target.query.value.toLowerCase()}`)
+                navigate(`/blog?s=${query.toLowerCase()}`)
               }}
             >
-              <input type="text" id="query" aria-label="Search" />
+              <input
+                type="text"
+                aria-label="Search"
+                onChange={e => setQuery(e.target.value)}
+              />
             </form>
             <IoIosSearch />
           </div>
@@ -60,7 +69,7 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
             <li>
               <Link to="/blog">トップ</Link>
             </li>
-            {data.allTopicsJson.edges.map(({ node }) => (
+            {data.allTopicsJson.edges.map(({ node }: any) => (
               <li key={node.slug}>
                 <Link to={`/${node.slug}`}>{node.name}</Link>
               </li>
@@ -69,11 +78,16 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
               <Link to="/about">INOLABOについて</Link>
             </li>
             <li>
-              <CustomBtn title="お仕事の依頼" iconComponent={<MailOutlineIcon />} bgColor="primary" to="/"/>
+              <CustomBtn
+                title="お仕事の依頼"
+                iconComponent={<MailOutlineIcon />}
+                bgColor="primary"
+                to="/"
+              />
             </li>
           </ul>
-          
-          {menuOpen ? (
+
+          {isMenuOpen ? (
             <button className="menu-button" onClick={() => setMenuOpen(false)}>
               <MdClose />
             </button>
@@ -84,10 +98,10 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
           )}
         </nav>
       </div>
-      {menuOpen && (
+      {isMenuOpen && (
         <div id="menu">
           <ul>
-            {data.allTopicsJson.edges.map(({ node }) => (
+            {data.allTopicsJson.edges.map(({ node }: any) => (
               <li key={node.slug}>
                 <Link to={`/${node.slug}`}>{node.name}</Link>
               </li>
@@ -95,22 +109,19 @@ const Header = ({ siteTitle, menuOpen, setMenuOpen }) => {
             <li>
               <Link to="/about">INOLABOについて</Link>
             </li>
-            <li style={{borderBottom: 'none'}}>
-              <CustomBtn title="お仕事の依頼" iconComponent={<MailOutlineIcon />} bgColor="primary" to="/"/>
+            <li style={{ borderBottom: "none" }}>
+              <CustomBtn
+                title="お仕事の依頼"
+                iconComponent={<MailOutlineIcon />}
+                bgColor="primary"
+                to="/"
+              />
             </li>
           </ul>
         </div>
       )}
     </header>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header

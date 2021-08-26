@@ -1,9 +1,9 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
+import Card from "@material-ui/core/Card"
+import CardContent from "@material-ui/core/CardContent"
+import CardMedia from "@material-ui/core/CardMedia"
+import Typography from "@material-ui/core/Typography"
 
 const useStyles = makeStyles({
   root: {
@@ -13,12 +13,19 @@ const useStyles = makeStyles({
     height: 250,
   },
   text: {
-    textAlign: 'left'
-  }
-});
+    textAlign: "left",
+  },
+})
 
-const WorksCard = ({title, platform, description, technology, image}) => {
-  const classes = useStyles();
+type Props = {
+  title: string
+  platform: string
+  technology: string
+  image: any
+}
+
+const WorksCard: React.FC<Props> = ({ title, platform, technology, image }) => {
+  const classes = useStyles()
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -34,7 +41,7 @@ const WorksCard = ({title, platform, description, technology, image}) => {
         <Typography variant="body2" color="textSecondary" component="h4">
           {platform}
         </Typography>
-        <br/>
+        <br />
         <Typography variant="h6" color="textSecondary" component="h3">
           使用技術
         </Typography>
@@ -43,7 +50,7 @@ const WorksCard = ({title, platform, description, technology, image}) => {
         </Typography>
       </CardContent>
     </Card>
-  );
+  )
 }
 
 export default WorksCard
