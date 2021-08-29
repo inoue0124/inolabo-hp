@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import { kebabCase } from 'lodash'
-import { TagListPageQuery } from 'generated/types/gatsby'
+import { TagListPageQuery } from '../__generated__/gatsby-types'
 import { Layout } from '../components/Layout'
 
 interface TagsPageProps {

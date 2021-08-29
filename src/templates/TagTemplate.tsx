@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import { TagPageQuery, TagPageQueryVariables } from 'generated/types/gatsby'
+import { TagPageQuery, TagPageQueryVariables } from '../__generated__/gatsby-types'
 import { ContentList } from '../components/ContentList'
 import { Pager } from '../components/Pager'
 import { Layout } from '../components/Layout'

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useOutside } from '@pacote/react-use-outside'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { Link } from 'gatsby'
 import lunr from 'lunr'
 

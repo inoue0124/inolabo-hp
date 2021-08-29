@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import { SinglePageQuery } from 'generated/types/gatsby'
+import { SinglePageQuery } from '../__generated__/gatsby-types'
 import { Layout } from '../components/Layout'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

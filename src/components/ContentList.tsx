@@ -1,6 +1,6 @@
 import React from 'react'
-import { css } from '@emotion/core'
-import { IndexPageQuery, TagPageQuery } from 'generated/types/gatsby'
+import { css } from '@emotion/react'
+import { IndexPageQuery, TagPageQuery } from '../__generated__/gatsby-types'
 import { Link } from 'gatsby'
 
 interface ContentListProps {

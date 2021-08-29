@@ -2,7 +2,7 @@
 import React from 'react'
 import { merge } from 'ramda'
 import { render } from '@testing-library/react'
-import { Mdx, MdxEdge } from 'generated/types/gatsby'
+import { Mdx, MdxEdge } from '../../src/__generated__/gatsby-types'
 import { ContentList } from '../../src/components/ContentList'
 
 function createEdge(override: DeepPartial<Mdx>): MdxEdge {

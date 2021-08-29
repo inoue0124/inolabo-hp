@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import { SiteMetadataQuery } from 'generated/types/gatsby'
-import { css } from '@emotion/core'
+import { SiteMetadataQuery } from '../__generated__/gatsby-types'
+import { css } from '@emotion/react'
 import { Header } from './Header'
 
 const wrapper = css`
@@ -16,7 +16,7 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-  const data = useStaticQuery<SiteMetadataQuery>(graphql`
+  const data = useStaticQuery<GatsbyTypes.SiteMetadataQuery>(graphql`
     query SiteMetadata {
       site {
         siteMetadata {
