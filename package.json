@@ -11,6 +11,8 @@
     "@pacote/react-use-outside": "^1.0.2",
     "@reach/router": "^1.2.0",
     "@types/lunr": "^2.1.6",
+    "aframe": "^1.2.0",
+    "aframe-react": "^4.4.0",
     "core-js": "^3.1.4",
     "emotion": "^10.0.4",
     "emotion-server": "^10.0.4",
