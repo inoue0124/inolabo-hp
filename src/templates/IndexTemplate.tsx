@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { ContentList } from '../components/ContentList'
 import { Pager } from '../components/Pager'
 import { Layout } from '../components/Layout'
-import { ArchivePageContext } from '../context'
+import { ArchivePageContext } from '../utils/context'
 
 interface IndexPageProps {
   readonly data: GatsbyTypes.IndexPageQuery
