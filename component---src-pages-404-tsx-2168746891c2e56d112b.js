@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk_goblindegook_gatsby_starter_typescript=self.webpackChunk_goblindegook_gatsby_starter_typescript||[]).push([[218],{938:function(t,e,r){r.r(e);var l=r(2356),n=r(3431);e.default=function(){return(0,n.tZ)(l.A,null,(0,n.tZ)("h2",null,"Nothing Here"),(0,n.tZ)("p",null,"Check that you followed the correct address."))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-2168746891c2e56d112b.js.map
