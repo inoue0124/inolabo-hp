@@ -1,7 +1,5 @@
-import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import { SiteMetadataQuery } from '../__generated__/gatsby-types'
 import { css } from '@emotion/react'
 import { Header } from './Header'
 
@@ -15,7 +13,7 @@ interface LayoutProps {
   readonly children?: React.ReactNode | readonly React.ReactNode[]
 }
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const data = useStaticQuery<GatsbyTypes.SiteMetadataQuery>(graphql`
     query SiteMetadata {
       site {
@@ -26,6 +24,9 @@ export const Layout = ({ children }: LayoutProps) => {
       }
     }
   `)
+  if (!data.site?.siteMetadata) {
+    throw new Error('siteMetadata is undefined')
+  }
 
   return (
     <main>
@@ -43,7 +44,7 @@ export const Layout = ({ children }: LayoutProps) => {
           },
         ]}
       />
-      <Header title={data.site.siteMetadata.title} />
+      <Header title={data.site.siteMetadata.title!} />
       <div css={wrapper}>{children}</div>
     </main>
   )

@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import { Link } from 'gatsby'
@@ -35,7 +34,7 @@ interface HeaderProps {
   readonly title: string
 }
 
-export const Header = ({ title }: HeaderProps) => (
+export const Header: React.FC<HeaderProps> = ({ title }) => (
   <div css={style.container}>
     <div css={style.wrapper}>
       <h1 css={style.title}>

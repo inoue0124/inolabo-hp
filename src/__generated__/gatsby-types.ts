@@ -669,8 +669,8 @@ type MdxFrontmatter = {
   readonly title: Scalars['String'];
   readonly path: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['Date']>;
-  readonly draft: Maybe<Scalars['Boolean']>;
   readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly draft: Maybe<Scalars['Boolean']>;
 };
 
 
@@ -1453,8 +1453,8 @@ type MdxFrontmatterFilterInput = {
   readonly title: Maybe<StringQueryOperatorInput>;
   readonly path: Maybe<StringQueryOperatorInput>;
   readonly date: Maybe<DateQueryOperatorInput>;
-  readonly draft: Maybe<BooleanQueryOperatorInput>;
   readonly tags: Maybe<StringQueryOperatorInput>;
+  readonly draft: Maybe<BooleanQueryOperatorInput>;
 };
 
 type MdxHeadingMdxFilterListInput = {
@@ -1826,8 +1826,8 @@ type FileFieldsEnum =
   | 'childrenMdx.frontmatter.title'
   | 'childrenMdx.frontmatter.path'
   | 'childrenMdx.frontmatter.date'
-  | 'childrenMdx.frontmatter.draft'
   | 'childrenMdx.frontmatter.tags'
+  | 'childrenMdx.frontmatter.draft'
   | 'childrenMdx.slug'
   | 'childrenMdx.body'
   | 'childrenMdx.excerpt'
@@ -1884,8 +1884,8 @@ type FileFieldsEnum =
   | 'childMdx.frontmatter.title'
   | 'childMdx.frontmatter.path'
   | 'childMdx.frontmatter.date'
-  | 'childMdx.frontmatter.draft'
   | 'childMdx.frontmatter.tags'
+  | 'childMdx.frontmatter.draft'
   | 'childMdx.slug'
   | 'childMdx.body'
   | 'childMdx.excerpt'
@@ -3581,8 +3581,8 @@ type MdxFieldsEnum =
   | 'frontmatter.title'
   | 'frontmatter.path'
   | 'frontmatter.date'
-  | 'frontmatter.draft'
   | 'frontmatter.tags'
+  | 'frontmatter.draft'
   | 'slug'
   | 'body'
   | 'excerpt'

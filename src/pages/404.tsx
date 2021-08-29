@@ -1,7 +1,6 @@
-import React from 'react'
 import { Layout } from '../components/Layout'
 
-const NotFoundPage = () => (
+const NotFoundPage: React.FC = () => (
   <Layout>
     <h2>Nothing Here</h2>
     <p>Check that you followed the correct address.</p>

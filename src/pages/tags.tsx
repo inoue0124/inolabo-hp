@@ -1,15 +1,13 @@
-import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import { kebabCase } from 'lodash'
-import { TagListPageQuery } from '../__generated__/gatsby-types'
 import { Layout } from '../components/Layout'
 
 interface TagsPageProps {
-  readonly data: TagListPageQuery
+  readonly data: GatsbyTypes.TagListPageQuery
 }
 
-const TagsPage = ({ data }: TagsPageProps) => {
+const TagsPage: React.FC<TagsPageProps> = ({ data }) => {
   return (
     <Layout>
       <Helmet title="Tags" />

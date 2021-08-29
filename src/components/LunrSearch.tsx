@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useOutside } from '@pacote/react-use-outside'
 import { css } from '@emotion/react'
 import { Link } from 'gatsby'
@@ -76,7 +76,7 @@ interface LunrSearchProps {
   readonly limit?: number
 }
 
-export const LunrSearch = ({ limit }: LunrSearchProps) => {
+export const LunrSearch: React.FC<LunrSearchProps> = ({ limit }) => {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<readonly SearchResult[]>([])
   const [isActive, setActive] = useState(false)

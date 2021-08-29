@@ -1,8 +1,7 @@
-import React from 'react'
 import { Link } from 'gatsby'
 import { Layout } from '../components/Layout'
 
-const SecondPage = () => (
+const SecondPage: React.FC = () => (
   <Layout>
     <h2>Hi from the second page</h2>
     <p>Welcome to page 2</p>

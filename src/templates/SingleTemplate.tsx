@@ -1,17 +1,16 @@
-import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import { SinglePageQuery } from '../__generated__/gatsby-types'
 import { Layout } from '../components/Layout'
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const MDXRenderer = require('gatsby-plugin-mdx/mdx-renderer')
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 interface ContentTemplateProps {
-  readonly data: SinglePageQuery
+  readonly data: GatsbyTypes.SinglePageQuery
 }
 
-const ContentTemplate = ({ data }: ContentTemplateProps) => {
+const ContentTemplate: React.FC<ContentTemplateProps> = ({ data }) => {
+  if (!data.mdx?.frontmatter || !data.mdx?.body) {
+    throw new Error('frontmatter is undefined')
+  }
   const {
     mdx: { frontmatter, body },
   } = data

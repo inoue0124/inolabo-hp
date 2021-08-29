@@ -1,21 +1,19 @@
-import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import { TagPageQuery, TagPageQueryVariables } from '../__generated__/gatsby-types'
 import { ContentList } from '../components/ContentList'
 import { Pager } from '../components/Pager'
 import { Layout } from '../components/Layout'
 import { ArchivePageContext } from '../context'
 
 interface TagTemplateProps {
-  readonly data: TagPageQuery
+  readonly data: GatsbyTypes.TagPageQuery
 
-  readonly pageContext: ArchivePageContext & TagPageQueryVariables
+  readonly pageContext: ArchivePageContext & GatsbyTypes.TagPageQueryVariables
 }
 
-const TagTemplate = (props: TagTemplateProps) => {
-  const { edges } = props.data.allMdx
-  const { page, prefix, pageTotal, tag } = props.pageContext
+const TagTemplate: React.FC<TagTemplateProps> = ({ data, pageContext }) => {
+  const { edges } = data.allMdx
+  const { page, prefix, pageTotal, tag } = pageContext
 
   return (
     <Layout>

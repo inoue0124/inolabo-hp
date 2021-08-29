@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Layout } from '../components/Layout'
 
-export const IndexPage = () => (
+export const IndexPage: React.FC = () => (
   <>
     <h2>Hi people</h2>
     <p>Welcome to your new Gatsby site.</p>

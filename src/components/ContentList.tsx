@@ -1,10 +1,10 @@
-import React from 'react'
 import { css } from '@emotion/react'
-import { IndexPageQuery, TagPageQuery } from '../__generated__/gatsby-types'
 import { Link } from 'gatsby'
 
 interface ContentListProps {
-  readonly edges: IndexPageQuery['allMdx']['edges'] | TagPageQuery['allMdx']['edges']
+  readonly edges:
+    | GatsbyTypes.IndexPageQuery['allMdx']['edges']
+    | GatsbyTypes.TagPageQuery['allMdx']['edges']
 }
 
 const list = css`
@@ -16,13 +16,16 @@ const list = css`
 
 const item = css``
 
-export const ContentList = ({ edges }: ContentListProps) => (
+export const ContentList: React.FC<ContentListProps> = ({ edges }) => (
   <ul css={list}>
     {edges.map(({ node }) => {
+      if (!node.frontmatter) {
+        throw new Error('frontmatter is undefined')
+      }
       const { path, title } = node.frontmatter
       return (
         <li css={item} key={path}>
-          <Link to={path}>{title}</Link> ({node.frontmatter.date})
+          <Link to={path!}>{title}</Link> ({node.frontmatter.date})
         </li>
       )
     })}

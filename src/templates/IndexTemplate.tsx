@@ -1,19 +1,17 @@
-import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import { IndexPageQuery, IndexPageQueryVariables } from '../__generated__/gatsby-types'
 import { ContentList } from '../components/ContentList'
 import { Pager } from '../components/Pager'
 import { Layout } from '../components/Layout'
 import { ArchivePageContext } from '../context'
 
 interface IndexPageProps {
-  readonly data: IndexPageQuery
+  readonly data: GatsbyTypes.IndexPageQuery
 
-  readonly pageContext: ArchivePageContext & IndexPageQueryVariables
+  readonly pageContext: ArchivePageContext & GatsbyTypes.IndexPageQueryVariables
 }
 
-const IndexTemplate = ({ data, pageContext }: IndexPageProps) => (
+const IndexTemplate: React.FC<IndexPageProps> = ({ data, pageContext }) => (
   <Layout>
     <Helmet
       meta={[

@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
@@ -27,7 +26,7 @@ const NavLink = styled(Link)`
   }
 `
 
-export const Pager = ({ prefix, page, total }: PagerProps) => (
+export const Pager: React.FC<PagerProps> = ({ prefix, page, total }) => (
   <div>
     {page > 1 && <NavLink to={pageUrl(prefix, page - 1)}>Previous</NavLink>}
     {page < total && <NavLink to={pageUrl(prefix, page + 1)}>Next</NavLink>}
