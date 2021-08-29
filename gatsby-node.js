@@ -12,7 +12,7 @@ const { kebabCase } = require('lodash')
 function groupCountBy(field, edges) {
   const groupCounts = edges.reduce((acc, { node }) => {
     const groups = node.frontmatter[field] || []
-    groups.forEach(group => {
+    groups.forEach((group) => {
       acc[group] = (acc[group] || 0) + 1
     })
     return acc
@@ -41,8 +41,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           page,
           pageTotal,
           prefix,
-          skip
-        }
+          skip,
+        },
       })
     }
   }
@@ -84,7 +84,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const path = frontmatter.path || `/${parent.sourceInstanceName}/${parent.name}`
     createPage({
       path,
-      component: SingleTemplate
+      component: SingleTemplate,
     })
   })
 
@@ -93,7 +93,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createContentListPages({
     itemTotal: edges.length,
     prefix: '/all',
-    component: IndexTemplate
+    component: IndexTemplate,
   })
 
   reporter.info(`Index (${Math.ceil(edges.length / 10)})`)
@@ -103,7 +103,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       itemTotal,
       prefix: `/tags/${kebabCase(tag)}`,
       component: TagTemplate,
-      context: { tag }
+      context: { tag },
     })
 
     reporter.info(`Tag: ${tag} (${Math.ceil(itemTotal / 10)})`)

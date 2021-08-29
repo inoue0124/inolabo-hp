@@ -105,7 +105,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write '{__mocks__,src,test}/**/*.{ts,tsx}' '*.js'",
     "lint": "eslint '{__mocks__,src,test}/**/*.{js,ts,tsx}'",
     "test": "jest"
