@@ -403,8 +403,8 @@ type MarkdownRemarkFrontmatter = {
   readonly title: Maybe<Scalars['String']>;
   readonly path: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['Date']>;
-  readonly draft: Maybe<Scalars['Boolean']>;
   readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly draft: Maybe<Scalars['Boolean']>;
 };
 
 
@@ -756,6 +756,10 @@ type SitePluginPluginOptions = {
   readonly isTSX: Maybe<Scalars['Boolean']>;
   readonly jsxPragma: Maybe<Scalars['String']>;
   readonly allExtensions: Maybe<Scalars['Boolean']>;
+  readonly base64Width: Maybe<Scalars['Int']>;
+  readonly stripMetadata: Maybe<Scalars['Boolean']>;
+  readonly defaultQuality: Maybe<Scalars['Int']>;
+  readonly failOnError: Maybe<Scalars['Boolean']>;
   readonly sourceMap: Maybe<Scalars['Boolean']>;
   readonly autoLabel: Maybe<Scalars['String']>;
   readonly labelFormat: Maybe<Scalars['String']>;
@@ -782,10 +786,6 @@ type SitePluginPluginOptions = {
   readonly decoding: Maybe<Scalars['String']>;
   readonly disableBgImageOnAlpha: Maybe<Scalars['Boolean']>;
   readonly disableBgImage: Maybe<Scalars['Boolean']>;
-  readonly base64Width: Maybe<Scalars['Int']>;
-  readonly stripMetadata: Maybe<Scalars['Boolean']>;
-  readonly defaultQuality: Maybe<Scalars['Int']>;
-  readonly failOnError: Maybe<Scalars['Boolean']>;
   readonly extensions: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly lessBabel: Maybe<Scalars['Boolean']>;
   readonly mediaTypes: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
@@ -1309,8 +1309,8 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly title: Maybe<StringQueryOperatorInput>;
   readonly path: Maybe<StringQueryOperatorInput>;
   readonly date: Maybe<DateQueryOperatorInput>;
-  readonly draft: Maybe<BooleanQueryOperatorInput>;
   readonly tags: Maybe<StringQueryOperatorInput>;
+  readonly draft: Maybe<BooleanQueryOperatorInput>;
 };
 
 type BooleanQueryOperatorInput = {
@@ -1567,8 +1567,8 @@ type FileFieldsEnum =
   | 'childrenMarkdownRemark.frontmatter.title'
   | 'childrenMarkdownRemark.frontmatter.path'
   | 'childrenMarkdownRemark.frontmatter.date'
-  | 'childrenMarkdownRemark.frontmatter.draft'
   | 'childrenMarkdownRemark.frontmatter.tags'
+  | 'childrenMarkdownRemark.frontmatter.draft'
   | 'childrenMarkdownRemark.excerpt'
   | 'childrenMarkdownRemark.rawMarkdownBody'
   | 'childrenMarkdownRemark.fileAbsolutePath'
@@ -1625,8 +1625,8 @@ type FileFieldsEnum =
   | 'childMarkdownRemark.frontmatter.title'
   | 'childMarkdownRemark.frontmatter.path'
   | 'childMarkdownRemark.frontmatter.date'
-  | 'childMarkdownRemark.frontmatter.draft'
   | 'childMarkdownRemark.frontmatter.tags'
+  | 'childMarkdownRemark.frontmatter.draft'
   | 'childMarkdownRemark.excerpt'
   | 'childMarkdownRemark.rawMarkdownBody'
   | 'childMarkdownRemark.fileAbsolutePath'
@@ -2684,6 +2684,10 @@ type SitePluginPluginOptionsFilterInput = {
   readonly isTSX: Maybe<BooleanQueryOperatorInput>;
   readonly jsxPragma: Maybe<StringQueryOperatorInput>;
   readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
+  readonly base64Width: Maybe<IntQueryOperatorInput>;
+  readonly stripMetadata: Maybe<BooleanQueryOperatorInput>;
+  readonly defaultQuality: Maybe<IntQueryOperatorInput>;
+  readonly failOnError: Maybe<BooleanQueryOperatorInput>;
   readonly sourceMap: Maybe<BooleanQueryOperatorInput>;
   readonly autoLabel: Maybe<StringQueryOperatorInput>;
   readonly labelFormat: Maybe<StringQueryOperatorInput>;
@@ -2710,10 +2714,6 @@ type SitePluginPluginOptionsFilterInput = {
   readonly decoding: Maybe<StringQueryOperatorInput>;
   readonly disableBgImageOnAlpha: Maybe<BooleanQueryOperatorInput>;
   readonly disableBgImage: Maybe<BooleanQueryOperatorInput>;
-  readonly base64Width: Maybe<IntQueryOperatorInput>;
-  readonly stripMetadata: Maybe<BooleanQueryOperatorInput>;
-  readonly defaultQuality: Maybe<IntQueryOperatorInput>;
-  readonly failOnError: Maybe<BooleanQueryOperatorInput>;
   readonly extensions: Maybe<StringQueryOperatorInput>;
   readonly lessBabel: Maybe<BooleanQueryOperatorInput>;
   readonly mediaTypes: Maybe<StringQueryOperatorInput>;
@@ -3070,6 +3070,10 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.isTSX'
   | 'pluginCreator.pluginOptions.jsxPragma'
   | 'pluginCreator.pluginOptions.allExtensions'
+  | 'pluginCreator.pluginOptions.base64Width'
+  | 'pluginCreator.pluginOptions.stripMetadata'
+  | 'pluginCreator.pluginOptions.defaultQuality'
+  | 'pluginCreator.pluginOptions.failOnError'
   | 'pluginCreator.pluginOptions.sourceMap'
   | 'pluginCreator.pluginOptions.autoLabel'
   | 'pluginCreator.pluginOptions.labelFormat'
@@ -3096,10 +3100,6 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.decoding'
   | 'pluginCreator.pluginOptions.disableBgImageOnAlpha'
   | 'pluginCreator.pluginOptions.disableBgImage'
-  | 'pluginCreator.pluginOptions.base64Width'
-  | 'pluginCreator.pluginOptions.stripMetadata'
-  | 'pluginCreator.pluginOptions.defaultQuality'
-  | 'pluginCreator.pluginOptions.failOnError'
   | 'pluginCreator.pluginOptions.extensions'
   | 'pluginCreator.pluginOptions.lessBabel'
   | 'pluginCreator.pluginOptions.mediaTypes'
@@ -3234,8 +3234,8 @@ type MarkdownRemarkFieldsEnum =
   | 'frontmatter.title'
   | 'frontmatter.path'
   | 'frontmatter.date'
-  | 'frontmatter.draft'
   | 'frontmatter.tags'
+  | 'frontmatter.draft'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -3858,6 +3858,10 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.isTSX'
   | 'pluginOptions.jsxPragma'
   | 'pluginOptions.allExtensions'
+  | 'pluginOptions.base64Width'
+  | 'pluginOptions.stripMetadata'
+  | 'pluginOptions.defaultQuality'
+  | 'pluginOptions.failOnError'
   | 'pluginOptions.sourceMap'
   | 'pluginOptions.autoLabel'
   | 'pluginOptions.labelFormat'
@@ -3884,10 +3888,6 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.decoding'
   | 'pluginOptions.disableBgImageOnAlpha'
   | 'pluginOptions.disableBgImage'
-  | 'pluginOptions.base64Width'
-  | 'pluginOptions.stripMetadata'
-  | 'pluginOptions.defaultQuality'
-  | 'pluginOptions.failOnError'
   | 'pluginOptions.extensions'
   | 'pluginOptions.lessBabel'
   | 'pluginOptions.mediaTypes'
@@ -4159,6 +4159,11 @@ type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SiteMetadataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
+type IndexLayoutQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type IndexLayoutQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

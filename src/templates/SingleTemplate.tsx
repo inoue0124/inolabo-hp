@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import { Layout } from '../components/Layout'
+import { Layout } from '../components/layout/Layout'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 interface ContentTemplateProps {

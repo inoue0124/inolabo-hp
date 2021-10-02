@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import { kebabCase } from 'lodash'
-import { Layout } from '../components/Layout'
+import { Layout } from '../components/layout/Layout'
 
 interface TagsPageProps {
   readonly data: GatsbyTypes.TagListPageQuery

@@ -8,7 +8,7 @@ interface PagerProps {
 }
 
 function pageUrl(prefix: string, page: number): string {
-  return page <= 1 ? `/${prefix}` : `/${prefix}/${page}`
+  return page <= 1 ? `${prefix}` : `${prefix}/${page}`
 }
 
 const NavLink = styled(Link)`

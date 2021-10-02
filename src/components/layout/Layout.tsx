@@ -1,11 +1,11 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import { css } from '@emotion/react'
-import { Header } from './Header'
+import { Header } from '../header'
 
 const wrapper = css`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1280px;
   padding: 0 1.0875rem 1.45rem;
 `
 

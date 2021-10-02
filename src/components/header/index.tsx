@@ -1,32 +1,31 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import { Link } from 'gatsby'
+import { NavLinks } from './NavLinks'
 
 const style = {
   container: css`
-    background: #ff5700;
-    margin-bottom: 1.45rem;
+    background: #fff;
   `,
   wrapper: css`
-    display: grid;
-    grid-template-columns: auto 10rem;
-    grid-template-rows: auto;
     margin: 0 auto;
-    max-width: 960px;
-    padding: 1.45rem 1.0875rem;
+    max-width: 1280px;
+    padding: 1.0875rem;
+    display: flex;
+    align-items: center;
   `,
   title: css`
-    margin: 0;
-    display: inline-block;
+    margin: 0 0 10px 0;
+    display: inline;
   `,
 }
 
 const TitleLink = styled(Link)`
-  color: #fff;
+  color: #000;
 
   &:active,
   &:hover {
-    color: #fff;
+    opacity: 0.5;
   }
 `
 
@@ -35,11 +34,12 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ title }) => (
-  <div css={style.container}>
+  <header css={style.container}>
     <div css={style.wrapper}>
       <h1 css={style.title}>
         <TitleLink to="/">{title}</TitleLink>
       </h1>
+      <NavLinks />
     </div>
-  </div>
+  </header>
 )

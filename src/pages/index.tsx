@@ -1,11 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Layout } from '../components/Layout'
-import Three from '../components/Three'
+import { IndexLayout } from '../components/layout/IndexLayout'
 
 export const IndexPage: React.FC = () => (
   <>
-    <Three></Three>
     <h2>Hi people</h2>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
@@ -19,9 +17,9 @@ export const IndexPage: React.FC = () => (
 )
 
 const LayoutIndexPage = () => (
-  <Layout>
+  <IndexLayout>
     <IndexPage />
-  </Layout>
+  </IndexLayout>
 )
 
 export default LayoutIndexPage

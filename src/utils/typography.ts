@@ -5,9 +5,8 @@ import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
 const typography = new Typography({
   baseFontSize: '20px',
   baseLineHeight: 1.45,
-  blockMarginBottom: 0.8,
-  headerFontFamily: ['Montserrat', 'sans-serif'],
-  bodyFontFamily: ['Domine', 'serif'],
+  headerFontFamily: ['M PLUS Rounded 1c', 'sans-serif'],
+  bodyFontFamily: ['Noto Sans JP', 'sans-serif'],
   bodyColor: gray(10),
   headerWeight: 600,
   bodyWeight: 300,

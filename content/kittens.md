@@ -1,5 +1,5 @@
 ---
-path: '/content/kittens/'
+path: '/content/kittens/aaaaa'
 date: '2018-01-07'
 title: 'Kittens'
 tags: ['markdown', 'kittens', 'example']
