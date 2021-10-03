@@ -6,6 +6,7 @@ import { Maybe } from 'graphql/jsutils/Maybe'
 import { css } from '@emotion/react'
 import { TagChip } from './TagChip'
 import { IoReload } from '@react-icons/all-files/io5/IoReload'
+import { navigate } from 'gatsby'
 
 const CadWrapper = styled('div')`
   cursor: pointer;
@@ -42,6 +43,7 @@ const styles = {
 }
 
 interface ArticleCardProps {
+  readonly path: string
   readonly thumbnail: any
   readonly title: string
   tags: Array<Maybe<string>>
@@ -50,6 +52,7 @@ interface ArticleCardProps {
 }
 
 export const ArticleCard: React.FC<ArticleCardProps> = ({
+  path,
   thumbnail,
   title,
   tags,
@@ -60,7 +63,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   return (
     <CadWrapper
       onClick={() => {
-        console.log('haha')
+        navigate(path)
       }}
     >
       <ImageWrapper>

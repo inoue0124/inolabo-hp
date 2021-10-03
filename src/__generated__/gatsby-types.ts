@@ -5153,7 +5153,7 @@ type PopularArticlesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type PopularArticlesQuery = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: Maybe<(
-          Pick<MdxFrontmatter, 'title' | 'createdAt' | 'updatedAt' | 'tags'>
+          Pick<MdxFrontmatter, 'path' | 'title' | 'createdAt' | 'updatedAt' | 'tags'>
           & { readonly thumbnail: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
         )> } }> } };
 

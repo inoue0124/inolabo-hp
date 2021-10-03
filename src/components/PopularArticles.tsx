@@ -20,6 +20,7 @@ export const PopularArticles: React.FC = () => {
         edges {
           node {
             frontmatter {
+              path
               title
               createdAt
               updatedAt
@@ -41,6 +42,7 @@ export const PopularArticles: React.FC = () => {
       <SectionHeader title="人気記事一覧" link="/all/" linkText="もっと見る"></SectionHeader>
       <Wrapper>
         <ArticleCard
+          path={data.allMdx.edges[0].node.frontmatter?.path!}
           title={data.allMdx.edges[0].node.frontmatter?.title!}
           thumbnail={data.allMdx.edges[0].node.frontmatter?.thumbnail}
           tags={data.allMdx.edges[0].node.frontmatter?.tags!}
@@ -48,6 +50,7 @@ export const PopularArticles: React.FC = () => {
           updatedAt={data.allMdx.edges[0].node.frontmatter?.updatedAt!}
         />
         <ArticleCard
+          path={data.allMdx.edges[0].node.frontmatter?.path!}
           title={data.allMdx.edges[0].node.frontmatter?.title!}
           thumbnail={data.allMdx.edges[0].node.frontmatter?.thumbnail}
           tags={data.allMdx.edges[0].node.frontmatter?.tags!}
@@ -55,6 +58,7 @@ export const PopularArticles: React.FC = () => {
           updatedAt={data.allMdx.edges[0].node.frontmatter?.updatedAt!}
         />
         <ArticleCard
+          path={data.allMdx.edges[0].node.frontmatter?.path!}
           title={data.allMdx.edges[0].node.frontmatter?.title!}
           thumbnail={data.allMdx.edges[0].node.frontmatter?.thumbnail}
           tags={data.allMdx.edges[0].node.frontmatter?.tags!}
