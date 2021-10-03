@@ -1,9 +1,10 @@
 import Typography from 'typography'
 import gray from 'gray-percentage'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import { path } from 'ramda'
 
 const typography = new Typography({
-  baseFontSize: '20px',
+  baseFontSize: '18px',
   baseLineHeight: 1.45,
   headerFontFamily: ['M PLUS Rounded 1c', 'sans-serif'],
   bodyFontFamily: ['Noto Sans JP', 'sans-serif'],

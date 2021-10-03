@@ -19,7 +19,7 @@
     "strictNullChecks": true,
     "target": "esnext",
     "types": ["@emotion/react"],
-    "jsxImportSource": "@emotion/react"
+    "jsxImportSource": "theme-ui"
   },
   "include": ["./src/**/*", "./test/**/*"]
 }

@@ -1,8 +1,10 @@
 ---
 path: "/content/sample01/"
-date: "2016-11-07"
-title: "Sample 1"
-tags: ["example"]
+createdAt: "2016-11-07"
+updatedAt: "2016-12-07"
+title: "個人開発のマーケティングには「自分メディア」が効く"
+tags: ["Nextjs", "フロントエンド","Nextjs", "フロントエンド"]
+thumbnail: "images/kittens.jpg"
 ---
 
 Sample content.

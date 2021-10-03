@@ -4,8 +4,7 @@ import { Link } from 'gatsby'
 
 const style = {
   nav: css`
-    max-width: 1280px;
-    margin: 0 auto;
+    margin: auto 0px auto auto;
   `,
   ul: css`
     display: flex;

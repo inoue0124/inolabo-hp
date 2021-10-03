@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import { css } from '@emotion/react'
 import { Header } from '../header'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const style = {
   wrapper: css`
@@ -47,6 +48,13 @@ export const IndexLayout: React.FC<IndexLayoutProps> = ({ children }) => {
         ]}
       />
       <Header title={data.site.siteMetadata.title!} />
+      <StaticImage
+        layout="fullWidth"
+        src="../../images/background.png"
+        alt="背景画像"
+        placeholder="blurred"
+        style={{ height: '500px', marginBottom: '20px' }}
+      />
       <div css={style.wrapper}>{children}</div>
     </main>
   )

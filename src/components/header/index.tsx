@@ -4,8 +4,12 @@ import { Link } from 'gatsby'
 import { NavLinks } from './NavLinks'
 
 const style = {
-  container: css`
+  header: css`
     background: #fff;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 100;
   `,
   wrapper: css`
     margin: 0 auto;
@@ -15,8 +19,9 @@ const style = {
     align-items: center;
   `,
   title: css`
-    margin: 0 0 10px 0;
+    margin: 0;
     display: inline;
+    font-size: 30px;
   `,
 }
 
@@ -34,7 +39,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ title }) => (
-  <header css={style.container}>
+  <header css={style.header}>
     <div css={style.wrapper}>
       <h1 css={style.title}>
         <TitleLink to="/">{title}</TitleLink>

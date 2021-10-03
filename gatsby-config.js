@@ -42,6 +42,13 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-emotion',
+    'gatsby-plugin-theme-ui',
+    {
+      resolve: 'gatsby-plugin-theme-ui',
+      options: {
+        preset: require('./src/utils/theme'),
+      },
+    },
     {
       resolve: 'gatsby-plugin-typography',
       options: {
